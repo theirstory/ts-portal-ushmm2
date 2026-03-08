@@ -66,7 +66,7 @@ export const StoryTranscriptWord = memo(
           fontSize: '12px',
           paddingRight: '2px',
           cursor: 'pointer',
-          userSelect: 'none',
+          userSelect: 'text',
           backgroundColor: isCurrent
             ? colors.warning.main
             : hasTraditionalHighlight

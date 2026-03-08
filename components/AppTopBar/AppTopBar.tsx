@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { LogoArchive } from '@/app/assets/svg/LogoArchive';
 import { CarouselTopBar } from '../CarouselTopBar/CarouselTopBar';
 import useLayoutState from '@/app/stores/useLayout';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { config, organizationConfig } from '@/config/organizationConfig';
 import { useSemanticSearchStore } from '@/app/stores/useSemanticSearchStore';
 import { colors } from '@/lib/theme';
@@ -25,7 +25,13 @@ export const AppTopBar = () => {
   const { collections, loadCollections } = useSemanticSearchStore();
 
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const isEmbed = searchParams.get('embed') === 'true';
+
+  if (isEmbed) return null;
   const isStoryPage = pathname.startsWith('/story/');
+  const isChatPage = pathname.startsWith('/chat');
+  const isFullScreenPage = isStoryPage || isChatPage;
   const isHeaderOverlayEnabled = config?.ui?.portalHeaderOverlay?.enabled ?? true;
   const organizationLogoPath = config.organization.logo?.path?.trim();
   const shouldUseCustomLogo = Boolean(organizationLogoPath);
@@ -36,12 +42,12 @@ export const AppTopBar = () => {
   };
 
   useEffect(() => {
-    if (isStoryPage) {
+    if (isFullScreenPage) {
       setIsTopBarCollapsed(true);
       return;
     }
     setIsTopBarCollapsed(false);
-  }, [isStoryPage, setIsTopBarCollapsed]);
+  }, [isFullScreenPage, setIsTopBarCollapsed]);
 
   useEffect(() => {
     if (collections.length === 0) {
@@ -135,7 +141,19 @@ export const AppTopBar = () => {
                     COLLECTIONS
                   </Link>
                 )}
-                {!isStoryPage && (
+                <Link
+                  href="/chat"
+                  style={{
+                    color: config.theme.colors.primary.contrastText,
+                    textDecoration: 'none',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
+                    minHeight: 0,
+                  }}>
+                  CHAT
+                </Link>
+                {!isFullScreenPage && (
                   <Tooltip title={isTopBarCollapsed ? 'Expand' : 'Collapse'}>
                     <IconButton
                       onClick={handleTopBarCollapseToggle}
@@ -223,6 +241,19 @@ export const AppTopBar = () => {
                   </Link>
                 </Box>
               )}
+              <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Link
+                  href="/chat"
+                  style={{
+                    color: config.theme.colors.primary.contrastText,
+                    textDecoration: 'none',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                  }}>
+                  CHAT
+                </Link>
+              </Box>
               <Typography
                 variant="caption"
                 color={config.theme.colors.primary.contrastText}

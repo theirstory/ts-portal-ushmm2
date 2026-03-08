@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import React from 'react';
+import React, { Suspense } from 'react';
 import './globals.css';
 import { AppTopBar } from '@/components/AppTopBar/AppTopBar';
 import { MainContainer } from './MainContainer';
@@ -17,12 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html className=" overflow-x-hidden" lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <MaterialUIThemeProvider>
-          <MainContainer>
-            <AppTopBar />
-            {children}
-          </MainContainer>
+          <Suspense>
+            <MainContainer>
+              <AppTopBar />
+              {children}
+            </MainContainer>
+          </Suspense>
         </MaterialUIThemeProvider>
       </body>
     </html>

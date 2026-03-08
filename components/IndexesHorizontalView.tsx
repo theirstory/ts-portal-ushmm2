@@ -3,6 +3,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
 import Link from 'next/link';
 import { VideoThumbnail } from './VideoThumbnail';
 import { durationFormatHandler, formatTime } from '@/app/utils/util';
@@ -149,6 +150,31 @@ export function IndexesHorizontalView({
                         }}>
                         {highlightSearchText(ch.synopsis, searchQuery)}
                       </Typography>
+                    )}
+                    {ch.keywords && ch.keywords.length > 0 && (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.25, mt: 0.5 }}>
+                        {ch.keywords.slice(0, 6).map((kw) => (
+                          <Chip
+                            key={kw}
+                            label={kw}
+                            size="small"
+                            variant="outlined"
+                            sx={{
+                              height: 20,
+                              fontSize: '0.7rem',
+                              '& .MuiChip-label': { px: 0.5 },
+                            }}
+                          />
+                        ))}
+                        {ch.keywords.length > 6 && (
+                          <Chip
+                            label={`+${ch.keywords.length - 6}`}
+                            size="small"
+                            variant="outlined"
+                            sx={{ height: 20, fontSize: '0.7rem', '& .MuiChip-label': { px: 0.5 } }}
+                          />
+                        )}
+                      </Box>
                     )}
                   </Box>
                 </Link>
