@@ -96,7 +96,7 @@ function groupSearchByRecording(citations: Citation[]): RecordingGroup[] {
 export const SidePanelSearchResults = () => {
   const searchResults = useChatStore((s) => s.searchResults);
   const selectionSearchQuery = useChatStore((s) => s.selectionSearchQuery);
-  const selectSearchResult = useChatStore((s) => s.selectSearchResult);
+  const setActiveCitation = useChatStore((s) => s.setActiveCitation);
   const [filterTerm, setFilterTerm] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
 
@@ -235,7 +235,7 @@ export const SidePanelSearchResults = () => {
             {!isCollapsed && group.results.map((citation, idx) => (
               <Box
                 key={`${citation.startTime}-${idx}`}
-                onClick={() => selectSearchResult(citation)}
+                onClick={() => setActiveCitation(citation, searchResults)}
                 sx={{
                   pl: 2,
                   pr: 2,
