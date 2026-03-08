@@ -365,6 +365,7 @@ export default function IndexesPage() {
             placeholder="Filter keywords..."
             value={keywordFilterTerm}
             onChange={(e) => setKeywordFilterTerm(e.target.value)}
+            onKeyDown={(e) => e.stopPropagation()}
             inputRef={keywordFilterInputRef}
             InputProps={{ startAdornment: <SearchIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} /> }}
           />
@@ -735,6 +736,7 @@ export default function IndexesPage() {
                 value={collectionFilterTerm}
                 onChange={(e) => setCollectionFilterTerm(e.target.value)}
                 onClick={(e) => e.stopPropagation()}
+                onKeyDown={(e) => e.stopPropagation()}
                 inputRef={collectionFilterInputRef}
                 autoFocus
               />
