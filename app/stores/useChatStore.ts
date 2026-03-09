@@ -18,10 +18,11 @@ type ChatStore = {
   selectionSearchType: SearchType;
   citationOpenedViaChip: boolean;
   hoveredCitationIndex: number | null;
+  hoveredFromPanel: boolean;
 
   sendMessage: (content: string) => Promise<void>;
   setActiveCitation: (citation: Citation, siblings?: Citation[]) => void;
-  setHoveredCitationIndex: (index: number | null) => void;
+  setHoveredCitationIndex: (index: number | null, fromPanel?: boolean) => void;
   closeSidePanel: () => void;
   setSearchResults: (results: Citation[], query: string, type?: SearchType) => void;
   selectSearchResult: (citation: Citation) => void;
@@ -50,6 +51,7 @@ export const useChatStore = create<ChatStore>()(
       selectionSearchType: 'hybrid',
       citationOpenedViaChip: false,
       hoveredCitationIndex: null,
+      hoveredFromPanel: false,
 
       sendMessage: async (content: string) => {
         const userMessage: ChatMessage = {
@@ -245,8 +247,8 @@ export const useChatStore = create<ChatStore>()(
           'setActiveCitation',
         ),
 
-      setHoveredCitationIndex: (index: number | null) =>
-        set({ hoveredCitationIndex: index }, false, 'setHoveredCitationIndex'),
+      setHoveredCitationIndex: (index: number | null, fromPanel?: boolean) =>
+        set({ hoveredCitationIndex: index, hoveredFromPanel: fromPanel ?? false }, false, 'setHoveredCitationIndex'),
 
       closeSidePanel: () =>
         set(

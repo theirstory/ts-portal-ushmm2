@@ -71,7 +71,7 @@ export const SidePanel = () => {
       </Box>
       <Box sx={{
         flex: 1,
-        overflow: sidePanelMode === 'transcript' ? 'hidden' : 'auto',
+        overflow: (sidePanelMode === 'transcript' || sidePanelMode === 'search') ? 'hidden' : 'auto',
         display: 'flex',
         flexDirection: 'column',
       }}>

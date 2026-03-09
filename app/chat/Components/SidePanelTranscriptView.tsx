@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react'
 import {
   Box,
   Button,
+  IconButton,
+  Tooltip,
   Typography,
   Accordion,
   AccordionSummary,
@@ -20,6 +22,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import MuxPlayer from '@mux/mux-player-react';
 import MuxPlayerElement from '@mux/mux-player';
 import { useChatStore } from '@/app/stores/useChatStore';
@@ -277,6 +280,7 @@ export const SidePanelTranscriptView = () => {
   const [activeMatchIndex, setActiveMatchIndex] = useState(0);
   const [thematicResults, setThematicResults] = useState<ThematicMatch[]>([]);
   const [thematicLoading, setThematicLoading] = useState(false);
+  const [thematicSearched, setThematicSearched] = useState(false);
   const [activeThematicIndex, setActiveThematicIndex] = useState(0);
   const videoRef = useRef<MuxPlayerElement>(null);
   const transcriptContainerRef = useRef<HTMLDivElement>(null);
@@ -427,6 +431,7 @@ export const SidePanelTranscriptView = () => {
       console.error('Thematic search error:', err);
     } finally {
       setThematicLoading(false);
+      setThematicSearched(true);
     }
   }, [searchTerm, storyId]);
 
@@ -514,6 +519,7 @@ export const SidePanelTranscriptView = () => {
     setPickerOpen(true);
     setThematicResults([]);
     setActiveThematicIndex(0);
+    setThematicSearched(false);
     setActiveMatchIndex(0);
   }, []);
 
@@ -569,6 +575,16 @@ export const SidePanelTranscriptView = () => {
           sx={{ textTransform: 'none' }}>
           {backLabel}
         </Button>
+        {storyId && (
+          <Tooltip title="Open in new tab">
+            <IconButton
+              size="small"
+              onClick={() => window.open(`/story/${storyId}?t=${highlightStart}`, '_blank')}
+              sx={{ ml: 'auto' }}>
+              <OpenInNewIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+        )}
       </Box>
 
       {loading && (
@@ -619,6 +635,7 @@ export const SidePanelTranscriptView = () => {
                   if (isThematic) {
                     setThematicResults([]);
                     setActiveThematicIndex(0);
+                    setThematicSearched(false);
                   }
                 }}
                 onKeyDown={handleSearchKeyDown}
@@ -709,9 +726,9 @@ export const SidePanelTranscriptView = () => {
                         <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: 'nowrap', mr: 0.5 }}>
                           No matches
                         </Typography>
-                      ) : isThematic && !thematicLoading && thematicResults.length === 0 && searchTerm.trim() ? (
+                      ) : isThematic && !thematicLoading && searchTerm.trim() ? (
                         <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: 'nowrap', mr: 0.5 }}>
-                          No matches
+                          {thematicSearched ? 'No matches' : 'Press Enter'}
                         </Typography>
                       ) : null}
                       <CloseIcon

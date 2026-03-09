@@ -96,7 +96,7 @@ function groupSearchByRecording(citations: Citation[]): RecordingGroup[] {
 export const SidePanelSearchResults = () => {
   const searchResults = useChatStore((s) => s.searchResults);
   const selectionSearchQuery = useChatStore((s) => s.selectionSearchQuery);
-  const setActiveCitation = useChatStore((s) => s.setActiveCitation);
+  const openTranscript = useChatStore((s) => s.openTranscript);
   const [filterTerm, setFilterTerm] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
 
@@ -136,44 +136,49 @@ export const SidePanelSearchResults = () => {
   }
 
   return (
-    <Box>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 1,
-          px: 2,
-          py: 1.5,
-          bgcolor: colors.primary.main,
-          color: colors.primary.contrastText,
-        }}>
-        <SearchIcon sx={{ fontSize: 18 }} />
-        <Typography variant="body2" fontWeight={500}>
-          &ldquo;{selectionSearchQuery}&rdquo;
-        </Typography>
-        <Typography variant="caption" sx={{ ml: 'auto', opacity: 0.85 }}>
-          {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
-        </Typography>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      {/* Sticky search header + filter */}
+      <Box sx={{ position: 'sticky', top: 0, zIndex: 3, flexShrink: 0 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1,
+            px: 2,
+            py: 1.5,
+            bgcolor: colors.primary.main,
+            color: colors.primary.contrastText,
+          }}>
+          <SearchIcon sx={{ fontSize: 18 }} />
+          <Typography variant="body2" fontWeight={500}>
+            &ldquo;{selectionSearchQuery}&rdquo;
+          </Typography>
+          <Typography variant="caption" sx={{ ml: 'auto', opacity: 0.85 }}>
+            {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
+          </Typography>
+        </Box>
+
+        <Box sx={{ px: 2, pt: 1.5, pb: 1, bgcolor: colors.background.paper }}>
+          <TextField
+            size="small"
+            fullWidth
+            placeholder="Filter results..."
+            value={filterTerm}
+            onChange={(e) => setFilterTerm(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" />
+                </InputAdornment>
+              ),
+            }}
+            sx={{ bgcolor: colors.background.default, borderRadius: '8px' }}
+          />
+        </Box>
       </Box>
 
-      <Box sx={{ px: 2, pt: 1.5, pb: 1 }}>
-        <TextField
-          size="small"
-          fullWidth
-          placeholder="Filter results..."
-          value={filterTerm}
-          onChange={(e) => setFilterTerm(e.target.value)}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon fontSize="small" />
-              </InputAdornment>
-            ),
-          }}
-          sx={{ bgcolor: colors.background.default, borderRadius: '8px' }}
-        />
-      </Box>
-
+      {/* Scrollable results */}
+      <Box sx={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
       {groups.map((group) => {
         const playbackId = getMuxPlaybackId(group.videoUrl);
         const thumbnailUrl = playbackId && !group.isAudioFile
@@ -235,7 +240,7 @@ export const SidePanelSearchResults = () => {
             {!isCollapsed && group.results.map((citation, idx) => (
               <Box
                 key={`${citation.startTime}-${idx}`}
-                onClick={() => setActiveCitation(citation, searchResults)}
+                onClick={() => openTranscript(citation)}
                 sx={{
                   pl: 2,
                   pr: 2,
@@ -262,6 +267,7 @@ export const SidePanelSearchResults = () => {
           No results match your filter.
         </Typography>
       )}
+      </Box>
     </Box>
   );
 };

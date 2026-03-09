@@ -18,6 +18,7 @@ export const ChatPanel = () => {
   const isStreaming = useChatStore((s) => s.isStreaming);
   const sendMessage = useChatStore((s) => s.sendMessage);
   const hoveredCitationIndex = useChatStore((s) => s.hoveredCitationIndex);
+  const hoveredFromPanel = useChatStore((s) => s.hoveredFromPanel);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const isEmpty = messages.length === 0;
@@ -30,14 +31,14 @@ export const ChatPanel = () => {
     scrollToBottom();
   }, [messages, scrollToBottom]);
 
-  // Scroll to hovered citation chip in chat when hovering a source in the side panel
+  // Scroll to hovered citation chip in chat only when hovering from the side panel
   useEffect(() => {
-    if (hoveredCitationIndex === null || !messagesContainerRef.current) return;
+    if (hoveredCitationIndex === null || !hoveredFromPanel || !messagesContainerRef.current) return;
     const el = messagesContainerRef.current.querySelector(`[data-citation-index="${hoveredCitationIndex}"]`);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }, [hoveredCitationIndex]);
+  }, [hoveredCitationIndex, hoveredFromPanel]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

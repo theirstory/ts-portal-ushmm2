@@ -61,7 +61,7 @@ export const ChatCitationChip = ({ citation, siblings }: Props) => {
             boxShadow: `0 0 0 2px ${colors.background.paper}, 0 0 0 4px ${citation.isChapterSynopsis ? colors.success.main : colors.primary.main}`,
           }),
           '&:hover': {
-            bgcolor: citation.isChapterSynopsis ? colors.success.light : colors.primary.dark,
+            bgcolor: citation.isChapterSynopsis ? '#43a047' : colors.primary.dark,
           },
         }}>
         {citation.index}

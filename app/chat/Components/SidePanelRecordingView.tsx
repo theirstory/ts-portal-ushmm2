@@ -298,7 +298,7 @@ const GroupedSourcesView = ({
                     <Box
                       data-citation-index={chapter.index}
                       onClick={() => onSelectCitation(chapter)}
-                      onMouseEnter={() => setHoveredCitationIndex(chapter.index)}
+                      onMouseEnter={() => setHoveredCitationIndex(chapter.index, true)}
                       onMouseLeave={() => setHoveredCitationIndex(null)}
                       sx={{
                         pl: 2,
@@ -325,7 +325,7 @@ const GroupedSourcesView = ({
                         key={`clip-${clip.startTime}-${clip.index}`}
                         data-citation-index={clip.index}
                         onClick={() => onSelectCitation(clip)}
-                        onMouseEnter={() => setHoveredCitationIndex(clip.index)}
+                        onMouseEnter={() => setHoveredCitationIndex(clip.index, true)}
                         onMouseLeave={() => setHoveredCitationIndex(null)}
                         sx={{
                           pl: 4,
@@ -356,7 +356,7 @@ const GroupedSourcesView = ({
                     key={`uclip-${clip.startTime}-${clip.index}`}
                     data-citation-index={clip.index}
                     onClick={() => onSelectCitation(clip)}
-                    onMouseEnter={() => setHoveredCitationIndex(clip.index)}
+                    onMouseEnter={() => setHoveredCitationIndex(clip.index, true)}
                     onMouseLeave={() => setHoveredCitationIndex(null)}
                     sx={{
                       pl: 2,

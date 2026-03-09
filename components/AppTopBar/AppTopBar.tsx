@@ -10,7 +10,7 @@ import { LogoArchive } from '@/app/assets/svg/LogoArchive';
 import { CarouselTopBar } from '../CarouselTopBar/CarouselTopBar';
 import useLayoutState from '@/app/stores/useLayout';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { config, organizationConfig } from '@/config/organizationConfig';
+import { config, organizationConfig, isChatEnabled } from '@/config/organizationConfig';
 import { useSemanticSearchStore } from '@/app/stores/useSemanticSearchStore';
 import { colors } from '@/lib/theme';
 
@@ -141,18 +141,20 @@ export const AppTopBar = () => {
                     COLLECTIONS
                   </Link>
                 )}
-                <Link
-                  href="/chat"
-                  style={{
-                    color: config.theme.colors.primary.contrastText,
-                    textDecoration: 'none',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    letterSpacing: '0.06em',
-                    minHeight: 0,
-                  }}>
-                  CHAT
-                </Link>
+                {isChatEnabled && (
+                  <Link
+                    href="/chat"
+                    style={{
+                      color: config.theme.colors.primary.contrastText,
+                      textDecoration: 'none',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      letterSpacing: '0.06em',
+                      minHeight: 0,
+                    }}>
+                    CHAT
+                  </Link>
+                )}
                 {!isFullScreenPage && (
                   <Tooltip title={isTopBarCollapsed ? 'Expand' : 'Collapse'}>
                     <IconButton
@@ -241,19 +243,21 @@ export const AppTopBar = () => {
                   </Link>
                 </Box>
               )}
-              <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-                <Link
-                  href="/chat"
-                  style={{
-                    color: config.theme.colors.primary.contrastText,
-                    textDecoration: 'none',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                  }}>
-                  CHAT
-                </Link>
-              </Box>
+              {isChatEnabled && (
+                <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                  <Link
+                    href="/chat"
+                    style={{
+                      color: config.theme.colors.primary.contrastText,
+                      textDecoration: 'none',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      letterSpacing: '0.08em',
+                    }}>
+                    CHAT
+                  </Link>
+                </Box>
+              )}
               <Typography
                 variant="caption"
                 color={config.theme.colors.primary.contrastText}
