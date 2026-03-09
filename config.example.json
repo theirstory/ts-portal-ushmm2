@@ -89,6 +89,13 @@
     }
   },
 
+  "features": {
+    "chat": {
+      "_comment": "Enable or disable the /chat page. When false, the Chat link is hidden from navigation.",
+      "enabled": false
+    }
+  },
+
   "ner": {
     "labels": [
       {
