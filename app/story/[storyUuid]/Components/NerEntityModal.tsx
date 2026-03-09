@@ -248,7 +248,7 @@ export const NerEntityModal: React.FC<NerEntityModalProps> = ({
 }) => {
   const [tabValue, setTabValue] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [collectionOccurrences, setCollectionOccurrences] = useState<WeaviateGenericObject<Chunks, undefined>[]>([]);
+  const [collectionOccurrences, setCollectionOccurrences] = useState<WeaviateGenericObject<Chunks, any>[]>([]);
   const [projectMentionCount, setProjectMentionCount] = useState<number | null>(null);
   const [projectRecordingCount, setProjectRecordingCount] = useState<number | null>(null);
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
@@ -352,7 +352,7 @@ export const NerEntityModal: React.FC<NerEntityModalProps> = ({
     onClose();
   };
 
-  const handleCollectionClick = (occurrence: WeaviateGenericObject<Chunks, undefined>) => {
+  const handleCollectionClick = (occurrence: WeaviateGenericObject<Chunks, any>) => {
     if (occurrence.uuid) {
       const url = `/story/${occurrence.properties.theirstory_id}?start=${occurrence.properties.start_time}&end=${occurrence.properties.end_time}&nerLabel=${entityLabel}`;
       window.open(url, '_blank');
@@ -368,7 +368,7 @@ export const NerEntityModal: React.FC<NerEntityModalProps> = ({
   const occurrencesByRecording = useMemo(() => {
     const byId = new Map<
       string,
-      { interview_title: string; theirstory_id: string; occurrences: WeaviateGenericObject<Chunks, undefined>[] }
+      { interview_title: string; theirstory_id: string; occurrences: WeaviateGenericObject<Chunks, any>[] }
     >();
     for (const obj of collectionOccurrences) {
       const props = obj.properties as ChunkProps;
