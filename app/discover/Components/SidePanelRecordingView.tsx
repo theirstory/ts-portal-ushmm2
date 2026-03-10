@@ -659,8 +659,9 @@ export const SidePanelRecordingView = () => {
 
   // List view — all sources with filter
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0, overflow: 'auto' }}>
-      <Box sx={{ px: 2, pt: 1.5, pb: 1, borderBottom: '1px solid', borderColor: 'divider', position: 'sticky', top: 0, zIndex: 3, bgcolor: colors.background.paper }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      {/* Fixed header — outside scroll container */}
+      <Box sx={{ px: 2, pt: 1.5, pb: 1, borderBottom: '1px solid', borderColor: 'divider', bgcolor: colors.background.paper, flexShrink: 0 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
           <Typography variant="subtitle2" fontWeight={600}>
             Sources ({activeCitationSiblings.length})
@@ -699,20 +700,23 @@ export const SidePanelRecordingView = () => {
           sx={{ bgcolor: colors.background.default, borderRadius: '8px' }}
         />
       </Box>
-      {listMode === 'recording' ? (
-        <GroupedSourcesView
-          citations={filteredCitations}
-          siblings={activeCitationSiblings}
-          filterTerm={filterTerm}
-          onSelectCitation={handleSelectCitation}
-        />
-      ) : (
-        <NumberedSourcesView
-          citations={filteredCitations}
-          filterTerm={filterTerm}
-          onSelectCitation={handleSelectCitation}
-        />
-      )}
+      {/* Scrollable content — recording headers stick within this */}
+      <Box sx={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
+        {listMode === 'recording' ? (
+          <GroupedSourcesView
+            citations={filteredCitations}
+            siblings={activeCitationSiblings}
+            filterTerm={filterTerm}
+            onSelectCitation={handleSelectCitation}
+          />
+        ) : (
+          <NumberedSourcesView
+            citations={filteredCitations}
+            filterTerm={filterTerm}
+            onSelectCitation={handleSelectCitation}
+          />
+        )}
+      </Box>
     </Box>
   );
 };

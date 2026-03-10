@@ -11,6 +11,7 @@ import {
   Button,
   ToggleButtonGroup,
   ToggleButton,
+  InputAdornment,
 } from '@mui/material';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CloseIcon from '@mui/icons-material/Close';
@@ -105,6 +106,8 @@ export const FloatingChatDrawer = () => {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [sourcesCitations, setSourcesCitations] = useState<Citation[]>([]);
   const [sourcesListMode, setSourcesListMode] = useState<'recording' | 'number'>('number');
+  const [searchFilterTerm, setSearchFilterTerm] = useState('');
+  const [sourcesFilterTerm, setSourcesFilterTerm] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -181,6 +184,7 @@ export const FloatingChatDrawer = () => {
     setSearchQuery(query);
     setSearchType(type);
     setCollapsed(new Set());
+    setSearchFilterTerm('');
     pushView('search');
   }, [pushView]);
 
@@ -193,6 +197,7 @@ export const FloatingChatDrawer = () => {
   const handleViewSources = useCallback((citations: Citation[]) => {
     setSourcesCitations(citations);
     setCollapsed(new Set());
+    setSourcesFilterTerm('');
     pushView('sources');
   }, [pushView]);
 
@@ -234,6 +239,28 @@ export const FloatingChatDrawer = () => {
     }
   }, [pairs]);
 
+  const filteredSearchResults = useMemo(() => {
+    const q = searchFilterTerm.trim().toLowerCase();
+    if (!q) return drawerSearchResults;
+    return drawerSearchResults.filter((c) =>
+      c.interviewTitle.toLowerCase().includes(q) ||
+      c.sectionTitle.toLowerCase().includes(q) ||
+      c.transcription.toLowerCase().includes(q) ||
+      c.speaker.toLowerCase().includes(q),
+    );
+  }, [drawerSearchResults, searchFilterTerm]);
+
+  const filteredSourcesCitations = useMemo(() => {
+    const q = sourcesFilterTerm.trim().toLowerCase();
+    if (!q) return sourcesCitations;
+    return sourcesCitations.filter((c) =>
+      c.interviewTitle.toLowerCase().includes(q) ||
+      c.sectionTitle.toLowerCase().includes(q) ||
+      c.transcription.toLowerCase().includes(q) ||
+      c.speaker.toLowerCase().includes(q),
+    );
+  }, [sourcesCitations, sourcesFilterTerm]);
+
   if (!shouldShow) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -258,7 +285,8 @@ export const FloatingChatDrawer = () => {
   };
 
   const shortcutLabel = isMac ? '⌘K' : 'Ctrl+K';
-  const groups = groupByRecording(drawerSearchResults);
+  const searchHighlight = searchFilterTerm.trim() || searchQuery;
+  const groups = groupByRecording(filteredSearchResults);
 
   return (
     <ChatContextProvider value={chatContextValue}>
@@ -476,9 +504,28 @@ export const FloatingChatDrawer = () => {
                 </Typography>
               </Box>
 
+              {/* Filter input */}
+              <Box sx={{ px: 2, pt: 1.5, pb: 1, borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0, bgcolor: colors.background.paper }}>
+                <TextField
+                  size="small"
+                  fullWidth
+                  placeholder="Filter results..."
+                  value={searchFilterTerm}
+                  onChange={(e) => setSearchFilterTerm(e.target.value)}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon fontSize="small" />
+                      </InputAdornment>
+                    ),
+                  }}
+                  sx={{ bgcolor: colors.background.default, borderRadius: '8px' }}
+                />
+              </Box>
+
               {/* Scrollable results */}
               <Box sx={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
-                {drawerSearchResults.length === 0 ? (
+                {filteredSearchResults.length === 0 ? (
                   <Box sx={{ p: 3, textAlign: 'center' }}>
                     <Typography variant="body2" color="text.secondary">
                       No results found
@@ -503,6 +550,9 @@ export const FloatingChatDrawer = () => {
                             px: 2,
                             py: 1.5,
                             bgcolor: colors.grey[50],
+                            position: 'sticky',
+                            top: 0,
+                            zIndex: 2,
                             cursor: 'pointer',
                             borderBottom: '1px solid',
                             borderColor: 'divider',
@@ -528,7 +578,7 @@ export const FloatingChatDrawer = () => {
                           )}
                           <Box sx={{ flex: 1, minWidth: 0 }}>
                             <Typography variant="subtitle2" fontWeight={700} sx={{ lineHeight: 1.3, fontSize: '0.8rem' }}>
-                              {highlightSearchText(group.interviewTitle, searchQuery)}
+                              {highlightSearchText(group.interviewTitle, searchHighlight)}
                             </Typography>
                             {isCollapsed && (
                               <Typography variant="caption" color="text.secondary">
@@ -552,8 +602,8 @@ export const FloatingChatDrawer = () => {
                               transition: 'background-color 0.15s',
                             }}>
                             <Typography variant="caption" color="text.secondary">
-                              {highlightSearchText(citation.speaker, searchQuery)} &middot;{' '}
-                              {highlightSearchText(citation.sectionTitle, searchQuery)} &middot;{' '}
+                              {highlightSearchText(citation.speaker, searchHighlight)} &middot;{' '}
+                              {highlightSearchText(citation.sectionTitle, searchHighlight)} &middot;{' '}
                               {formatTime(citation.startTime)}–{formatTime(citation.endTime)}
                             </Typography>
                             <Typography
@@ -567,7 +617,7 @@ export const FloatingChatDrawer = () => {
                                 WebkitBoxOrient: 'vertical',
                                 overflow: 'hidden',
                               }}>
-                              {highlightSearchText(citation.transcription, searchQuery)}
+                              {highlightSearchText(citation.transcription, searchHighlight)}
                             </Typography>
                           </Box>
                         ))}
@@ -629,11 +679,30 @@ export const FloatingChatDrawer = () => {
                 </ToggleButtonGroup>
               </Box>
 
+              {/* Filter input */}
+              <Box sx={{ px: 2, pt: 1.5, pb: 1, borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0, bgcolor: colors.background.paper }}>
+                <TextField
+                  size="small"
+                  fullWidth
+                  placeholder="Filter sources..."
+                  value={sourcesFilterTerm}
+                  onChange={(e) => setSourcesFilterTerm(e.target.value)}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon fontSize="small" />
+                      </InputAdornment>
+                    ),
+                  }}
+                  sx={{ bgcolor: colors.background.default, borderRadius: '8px' }}
+                />
+              </Box>
+
               {/* Scrollable sources */}
               <Box sx={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
                 {sourcesListMode === 'number' ? (
                   // Numbered view — sorted by citation index with thumbnails
-                  [...sourcesCitations].sort((a, b) => a.index - b.index).map((citation) => {
+                  [...filteredSourcesCitations].sort((a, b) => a.index - b.index).map((citation) => {
                     const playbackId = getMuxPlaybackId(citation.videoUrl);
                     const thumbnailUrl = playbackId && !citation.isAudioFile
                       ? `https://image.mux.com/${playbackId}/thumbnail.jpg?width=320&height=180&fit_mode=crop&time=${Math.floor(citation.startTime)}`
@@ -711,7 +780,7 @@ export const FloatingChatDrawer = () => {
                   })
                 ) : (
                   // Recording-grouped view
-                  groupByRecording(sourcesCitations).map((group) => {
+                  groupByRecording(filteredSourcesCitations).map((group) => {
                     const playbackId = getMuxPlaybackId(group.videoUrl);
                     const thumbnailUrl = playbackId && !group.isAudioFile
                       ? `https://image.mux.com/${playbackId}/thumbnail.jpg?width=320&height=180&fit_mode=crop`
@@ -729,6 +798,9 @@ export const FloatingChatDrawer = () => {
                             px: 2,
                             py: 1.5,
                             bgcolor: colors.grey[50],
+                            position: 'sticky',
+                            top: 0,
+                            zIndex: 2,
                             cursor: 'pointer',
                             borderBottom: '1px solid',
                             borderColor: 'divider',
@@ -754,7 +826,7 @@ export const FloatingChatDrawer = () => {
                           )}
                           <Box sx={{ flex: 1, minWidth: 0 }}>
                             <Typography variant="subtitle2" fontWeight={700} sx={{ lineHeight: 1.3, fontSize: '0.8rem' }}>
-                              {group.interviewTitle}
+                              {highlightSearchText(group.interviewTitle, sourcesFilterTerm)}
                             </Typography>
                             <Typography variant="caption" color="text.secondary">
                               {group.results.length} source{group.results.length !== 1 ? 's' : ''}
