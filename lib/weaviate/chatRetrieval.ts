@@ -1,6 +1,6 @@
 'use server';
 
-import { Chunks, SchemaTypes, Testimonies } from '@/types/weaviate';
+import { Chunks, SchemaTypes } from '@/types/weaviate';
 import { Citation } from '@/types/chat';
 import { initWeaviateClient } from './client';
 import { getLocalEmbedding, bm25Search, vectorSearch, hybridSearch, getAllStoriesFromCollection } from './search';
@@ -57,8 +57,7 @@ function deduplicateCitations(citations: Citation[]): Citation[] {
     const isDuplicate = result.some((existing) => {
       // Same interview, overlapping time ranges (within 2 seconds)
       if (existing.theirstoryId === c.theirstoryId) {
-        const timeOverlap =
-          existing.startTime <= c.endTime + 2 && c.startTime <= existing.endTime + 2;
+        const timeOverlap = existing.startTime <= c.endTime + 2 && c.startTime <= existing.endTime + 2;
         if (timeOverlap) return true;
       }
       // Content overlap
@@ -72,10 +71,7 @@ function deduplicateCitations(citations: Citation[]): Citation[] {
   return result;
 }
 
-export async function retrieveChunksForChat(
-  query: string,
-  limit = 8,
-): Promise<Citation[]> {
+export async function retrieveChunksForChat(query: string, limit = 8): Promise<Citation[]> {
   const client = await initWeaviateClient();
   const myCollection = client.collections.get<Chunks>(SchemaTypes.Chunks);
 
@@ -120,15 +116,7 @@ export async function retrieveChunksForSearch(
   let response;
 
   if (searchType === 'bm25') {
-    response = await bm25Search(
-      SchemaTypes.Chunks,
-      query,
-      limit * 2,
-      0,
-      undefined,
-      undefined,
-      CHAT_RETURN_PROPS,
-    );
+    response = await bm25Search(SchemaTypes.Chunks, query, limit * 2, 0, undefined, undefined, CHAT_RETURN_PROPS);
   } else if (searchType === 'vector') {
     response = await vectorSearch(
       SchemaTypes.Chunks,

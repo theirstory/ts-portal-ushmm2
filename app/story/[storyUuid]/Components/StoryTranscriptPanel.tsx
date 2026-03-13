@@ -5,7 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { StoryTranscriptToolbar } from './StoryTranscriptToolbar';
 import { useSemanticSearchStore } from '@/app/stores/useSemanticSearchStore';
 import { StoryTranscriptParagraph } from './StoryTranscriptParagraph';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranscriptPanelStore } from '@/app/stores/useTranscriptPanelStore';
 import usePlayerStore from '@/app/stores/usePlayerStore';
 import { useSearchParams } from 'next/navigation';
@@ -33,7 +33,6 @@ export const StoryTranscriptPanel = ({ isMobile = false }: StoryTranscriptPanelP
     initializeExpandedSections,
     setIsCurrentTimeOutOfView,
     isCurrentTimeOutOfView,
-    targetScrollTime,
   } = useTranscriptPanelStore();
   const { isPlaying, currentTime } = usePlayerStore();
   const { seekAndScroll, scrollToTime } = useTranscriptNavigation();
@@ -53,7 +52,7 @@ export const StoryTranscriptPanel = ({ isMobile = false }: StoryTranscriptPanelP
   /**
    * variables
    */
-  const sections = transcript?.sections ?? [];
+  const sections = useMemo(() => transcript?.sections ?? [], [transcript?.sections]);
   const areAccordionsInitialized = Object.keys(expandedSections).length === sections.length;
   const startParam = searchParams.get('start');
   const endParam = searchParams.get('end');

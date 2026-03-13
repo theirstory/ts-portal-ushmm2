@@ -41,10 +41,6 @@ config.json
 json/interviews/
 public/images/
 
-# SSH keys
-civics-unplugged
-civics-unplugged.pub
-
 # TypeScript build cache
 tsconfig.tsbuildinfo
 

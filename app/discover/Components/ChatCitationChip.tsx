@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Box, Tooltip } from '@mui/material';
+import { darken } from '@mui/material/styles';
 import { Citation } from '@/types/chat';
 import { useChatStore } from '@/app/stores/useChatStore';
 import { useChatContext } from '@/app/discover/ChatContext';
@@ -71,7 +72,7 @@ export const ChatCitationChip = ({ citation, siblings, messageId }: Props) => {
             boxShadow: `0 0 0 2px ${colors.background.paper}, 0 0 0 4px ${citation.isChapterSynopsis ? colors.success.main : colors.primary.main}`,
           }),
           '&:hover': {
-            bgcolor: citation.isChapterSynopsis ? '#43a047' : colors.primary.dark,
+            bgcolor: citation.isChapterSynopsis ? darken(colors.success.main, 0.12) : colors.primary.dark,
           },
         }}>
         {citation.index}

@@ -15,11 +15,11 @@ export async function GET(request: Request) {
       return Response.json({ error: 'Story not found' }, { status: 404 });
     }
 
-    const props = response.properties as Record<string, any>;
+    const props = response.properties;
     const transcription: Transcription = JSON.parse(props.transcription);
-    const videoUrl: string = props.video_url || '';
-    const isAudioFile: boolean = props.isAudioFile || false;
-    const interviewTitle: string = props.interview_title || '';
+    const videoUrl: string = props.video_url;
+    const isAudioFile: boolean = props.isAudioFile;
+    const interviewTitle: string = props.interview_title;
 
     return Response.json({
       transcription,

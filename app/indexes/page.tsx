@@ -37,9 +37,7 @@ function filterStories(
     if (selectedCollectionIds.length > 0 && !selectedCollectionIds.includes(story.collection_id)) return false;
     const chapters = chaptersByStoryId[story.uuid] ?? [];
     if (selectedKeywordIds.length > 0) {
-      const hasKeyword = chapters.some((ch) =>
-        ch.keywords?.some((kw) => selectedKeywordIds.includes(kw)),
-      );
+      const hasKeyword = chapters.some((ch) => ch.keywords?.some((kw) => selectedKeywordIds.includes(kw)));
       if (!hasKeyword) return false;
     }
     if (!q) return true;
@@ -129,13 +127,7 @@ export default function IndexesPage() {
 
   const filteredStories = useMemo(() => {
     if (!data) return [];
-    return filterStories(
-      data.stories,
-      searchQuery,
-      selectedCollectionIds,
-      selectedKeywordIds,
-      data.chaptersByStoryId,
-    );
+    return filterStories(data.stories, searchQuery, selectedCollectionIds, selectedKeywordIds, data.chaptersByStoryId);
   }, [data, searchQuery, selectedCollectionIds, selectedKeywordIds]);
 
   const filteredChaptersByStoryId = useMemo((): Record<string, IndexChapter[]> => {
@@ -183,9 +175,7 @@ export default function IndexesPage() {
   };
 
   const handleKeywordToggle = (keyword: string) => {
-    setSelectedKeywordIds((prev) =>
-      prev.includes(keyword) ? prev.filter((x) => x !== keyword) : [...prev, keyword],
-    );
+    setSelectedKeywordIds((prev) => (prev.includes(keyword) ? prev.filter((x) => x !== keyword) : [...prev, keyword]));
   };
 
   const keywordMenuOpen = Boolean(keywordMenuAnchor);
@@ -307,7 +297,11 @@ export default function IndexesPage() {
                 })}
               </Box>
             )}
-            <Typography variant="subtitle2" fontWeight={600} color="text.primary" sx={{ display: 'block', mt: 1.5, mb: 0.5 }}>
+            <Typography
+              variant="subtitle2"
+              fontWeight={600}
+              color="text.primary"
+              sx={{ display: 'block', mt: 1.5, mb: 0.5 }}>
               Keyword
             </Typography>
             <Button
@@ -354,7 +348,10 @@ export default function IndexesPage() {
       <Menu
         anchorEl={keywordMenuAnchor}
         open={keywordMenuOpen}
-        onClose={() => { setKeywordMenuAnchor(null); setKeywordFilterTerm(''); }}
+        onClose={() => {
+          setKeywordMenuAnchor(null);
+          setKeywordFilterTerm('');
+        }}
         PaperProps={{ sx: { maxHeight: 320, width: 320 } }}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
@@ -373,11 +370,15 @@ export default function IndexesPage() {
         {filteredKeywordsForDropdown.slice(0, 100).map((kw) => (
           <MenuItem key={kw} onClick={() => handleKeywordToggle(kw)} dense>
             <Checkbox size="small" checked={selectedKeywordIds.includes(kw)} sx={{ mr: 1 }} />
-            <Typography variant="body2" noWrap>{kw}</Typography>
+            <Typography variant="body2" noWrap>
+              {kw}
+            </Typography>
           </MenuItem>
         ))}
         {filteredKeywordsForDropdown.length > 100 && (
-          <Typography variant="caption" color="text.secondary" sx={{ px: 2, py: 1 }}>Use search to narrow. Showing first 100.</Typography>
+          <Typography variant="caption" color="text.secondary" sx={{ px: 2, py: 1 }}>
+            Use search to narrow. Showing first 100.
+          </Typography>
         )}
       </Menu>
 
@@ -598,7 +599,11 @@ export default function IndexesPage() {
                 })}
               </Box>
             )}
-            <Typography variant="subtitle2" fontWeight={600} color="text.primary" sx={{ display: 'block', mt: 1.5, mb: 0.5 }}>
+            <Typography
+              variant="subtitle2"
+              fontWeight={600}
+              color="text.primary"
+              sx={{ display: 'block', mt: 1.5, mb: 0.5 }}>
               Keyword
             </Typography>
             <Button

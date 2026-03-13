@@ -7,54 +7,57 @@ import { SidePanel } from './SidePanel';
 import { TextSelectionPopover } from './TextSelectionPopover';
 import { ChatContextProvider } from '@/app/discover/ChatContext';
 import { useChatStore } from '@/app/stores/useChatStore';
-import { Citation } from '@/types/chat';
+import { Citation, ChatMessage } from '@/types/chat';
+
+const hasCitations = (message: ChatMessage) => message.role === 'assistant' && Boolean(message.citations?.length);
+
+const findLastAssistantMessageWithCitations = (messages: ChatMessage[]) => {
+  return [...messages].reverse().find(hasCitations);
+};
+
+const findAssistantMessageByCitations = (messages: ChatMessage[], citations: Citation[]) => {
+  for (const msg of messages) {
+    if (msg.role === 'assistant' && msg.citations === citations) {
+      return msg;
+    }
+  }
+
+  if (citations.length === 0) return undefined;
+
+  const [firstCitation] = citations;
+
+  return messages.find(
+    (msg) =>
+      hasCitations(msg) &&
+      msg.citations![0].index === firstCitation.index &&
+      msg.citations![0].theirstoryId === firstCitation.theirstoryId,
+  );
+};
 
 export const ChatContainer = () => {
   const sidePanelMode = useChatStore((s) => s.sidePanelMode);
   const messages = useChatStore((s) => s.messages);
   const showSourcesForMessage = useChatStore((s) => s.showSourcesForMessage);
   const containerRef = useRef<HTMLDivElement>(null);
+  const didAutoOpenSourcesRef = useRef(false);
   const isSidePanelOpen = sidePanelMode !== 'hidden';
 
-  // Auto-open sources panel when page loads with existing chat context
+  // Auto-open sources once when existing chat context becomes available.
   useEffect(() => {
-    if (messages.length >= 2 && sidePanelMode === 'hidden') {
-      // Find the last assistant message with citations
-      for (let i = messages.length - 1; i >= 0; i--) {
-        const msg = messages[i];
-        if (msg.role === 'assistant' && msg.citations && msg.citations.length > 0) {
-          showSourcesForMessage(msg.id);
-          break;
-        }
-      }
-    }
-    // Only run on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (didAutoOpenSourcesRef.current || sidePanelMode !== 'hidden') return;
+
+    const lastAssistantMessage = findLastAssistantMessageWithCitations(messages);
+    if (!lastAssistantMessage) return;
+
+    didAutoOpenSourcesRef.current = true;
+    showSourcesForMessage(lastAssistantMessage.id);
+  }, [messages, showSourcesForMessage, sidePanelMode]);
 
   const handleViewSources = useCallback(
     (citations: Citation[]) => {
-      // Find the assistant message that has these citations
-      for (const msg of messages) {
-        if (msg.role === 'assistant' && msg.citations === citations) {
-          showSourcesForMessage(msg.id);
-          return;
-        }
-      }
-      // Fallback: find by matching first citation
-      if (citations.length > 0) {
-        for (const msg of messages) {
-          if (
-            msg.role === 'assistant' &&
-            msg.citations &&
-            msg.citations.length > 0 &&
-            msg.citations[0].index === citations[0].index &&
-            msg.citations[0].theirstoryId === citations[0].theirstoryId
-          ) {
-            showSourcesForMessage(msg.id);
-            return;
-          }
-        }
+      const assistantMessage = findAssistantMessageByCitations(messages, citations);
+      if (assistantMessage) {
+        showSourcesForMessage(assistantMessage.id);
       }
     },
     [messages, showSourcesForMessage],
