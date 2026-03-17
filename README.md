@@ -170,6 +170,7 @@ Before running deployment commands:
 
 - Create a Linux server in your hosting provider (DigitalOcean, AWS, Hetzner, etc.).
 - Connect to that server via SSH (example: `ssh root@YOUR_SERVER_IP`).
+- If you want to use Discover (RAG), add the API key for the provider to `.env.production` before deploying. If `.env.production` does not exist yet, create it from `.env.production.example`.
 
 On the server terminal (remote host):
 
