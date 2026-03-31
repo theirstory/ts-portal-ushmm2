@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { ChatMessage, Citation, ChatStreamChunk } from '@/types/chat';
+import { config } from '@/config/organizationConfig';
 
 type SidePanelMode = 'hidden' | 'recording' | 'search' | 'transcript';
 type SearchType = 'bm25' | 'vector' | 'hybrid';
@@ -46,6 +47,17 @@ let messageIdCounter = Date.now();
 function nextId(): string {
   return `msg-${++messageIdCounter}`;
 }
+
+const toStorageSlug = (value: string) =>
+  value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const chatStoreName = `chat-store:${
+  toStorageSlug(config.organization.displayName || config.organization.name) || 'default'
+}`;
 
 export const useChatStore = create<ChatStore>()(
   devtools(
@@ -504,7 +516,7 @@ export const useChatStore = create<ChatStore>()(
         clearScrollToCitation: () => set({ scrollToCitationIndex: null }, false, 'clearScrollToCitation'),
       }),
       {
-        name: 'chat-store',
+        name: chatStoreName,
         partialize: (state) => ({ messages: state.messages }),
       },
     ),

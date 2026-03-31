@@ -45,6 +45,7 @@ type ChatComposerProps = {
 type ChatStarterQuestionsProps = {
   onStarterClick: (question: string) => void;
   variant?: 'default' | 'compact';
+  showTitle?: boolean;
 };
 
 function buildQAPairs(messages: ChatMessageType[]): QAPair[] {
@@ -57,7 +58,11 @@ function buildQAPairs(messages: ChatMessageType[]): QAPair[] {
   return result;
 }
 
-export function ChatStarterQuestions({ onStarterClick, variant = 'default' }: ChatStarterQuestionsProps) {
+export function ChatStarterQuestions({
+  onStarterClick,
+  variant = 'default',
+  showTitle = true,
+}: ChatStarterQuestionsProps) {
   const compact = variant === 'compact';
 
   return (
@@ -81,13 +86,15 @@ export function ChatStarterQuestions({ onStarterClick, variant = 'default' }: Ch
           flexDirection: 'column',
           gap: compact ? 1 : 1.5,
         }}>
-        <Typography
-          variant={compact ? 'body1' : 'h4'}
-          fontWeight={600}
-          color={colors.text.primary}
-          sx={{ textAlign: 'center', mb: compact ? 2 : 1 }}>
-          Ask about the interviews
-        </Typography>
+        {showTitle && (
+          <Typography
+            variant={compact ? 'body1' : 'h4'}
+            fontWeight={600}
+            color={colors.text.primary}
+            sx={{ textAlign: 'center', mb: compact ? 2 : 1 }}>
+            Ask about the interviews
+          </Typography>
+        )}
 
         {STARTER_QUESTIONS.map((q) => (
           <Button
@@ -101,7 +108,7 @@ export function ChatStarterQuestions({ onStarterClick, variant = 'default' }: Ch
             onClick={() => onStarterClick(q)}
             sx={{
               textTransform: 'none',
-              borderRadius: 2,
+              borderRadius: 3,
               borderColor: colors.grey[300],
               color: colors.text.primary,
               fontSize: compact ? '0.8rem' : '0.875rem',
@@ -386,7 +393,7 @@ export function ChatComposer({
             ? {
                 input: {
                   endAdornment: (
-                    <InputAdornment position="end" sx={{ alignSelf: 'center', mr: 0.5 }}>
+                    <InputAdornment position="end" sx={{ alignSelf: 'flex-end', mr: 0.5, mb: 0.5 }}>
                       <IconButton
                         type={isStreaming ? 'button' : 'submit'}
                         onClick={isStreaming ? onStop : undefined}
@@ -396,9 +403,9 @@ export function ChatComposer({
                           color: colors.primary.contrastText,
                           '&:hover': { bgcolor: isStreaming ? colors.error.main : colors.primary.dark },
                           '&.Mui-disabled': { bgcolor: colors.grey[300] },
-                          borderRadius: 2,
-                          width: 36,
-                          height: 36,
+                          borderRadius: '50%',
+                          width: 44,
+                          height: 44,
                         }}>
                         {isStreaming ? <StopIcon sx={{ fontSize: 18 }} /> : <SendIcon sx={{ fontSize: 18 }} />}
                       </IconButton>
@@ -415,14 +422,15 @@ export function ChatComposer({
             fontSize: fullHeight ? '1rem' : undefined,
             boxShadow: compact ? `0 1px 2px ${colors.common.shadow}` : 'none',
             minHeight: compact ? 52 : undefined,
+            borderRadius: fullHeight ? 4 : compact ? 3 : undefined,
             '& fieldset': {
-              borderColor: compact ? colors.grey[300] : undefined,
+              borderColor: fullHeight || compact ? colors.grey[300] : undefined,
             },
             '&:hover fieldset': {
-              borderColor: compact ? colors.grey[400] : undefined,
+              borderColor: fullHeight || compact ? colors.grey[400] : undefined,
             },
             '&.Mui-focused fieldset': {
-              borderColor: compact ? colors.primary.light : undefined,
+              borderColor: fullHeight || compact ? colors.primary.light : undefined,
             },
           },
         }}

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Box, Button, Tooltip } from '@mui/material';
+import { Box, Button, Tooltip, Typography } from '@mui/material';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useChatStore } from '@/app/stores/useChatStore';
 import { colors } from '@/lib/theme';
@@ -92,8 +92,16 @@ export const ChatPanel = () => {
             maxWidth: 680,
             display: 'flex',
             flexDirection: 'column',
-            gap: 2,
+            gap: 2.5,
           }}>
+          <Typography
+            variant="h4"
+            fontWeight={700}
+            color={colors.text.primary}
+            sx={{ textAlign: 'center', mb: 0.5 }}>
+            Ask about the interviews
+          </Typography>
+
           <ChatComposer
             input={input}
             isStreaming={isStreaming}
@@ -106,7 +114,7 @@ export const ChatPanel = () => {
           />
 
           <Box sx={{ mt: 2 }}>
-            <ChatStarterQuestions onStarterClick={handleStarterClick} />
+            <ChatStarterQuestions onStarterClick={handleStarterClick} showTitle={false} />
           </Box>
         </Box>
       </Box>

@@ -7,7 +7,7 @@
     "description": "A digital archive of oral histories from African American individuals, created by the University of Connecticut Department of History.",
     "logo": {
       "_comment": "Optional custom logo path from /public (example: /images/logo.png). If empty, default LogoArchive is used.",
-      "path": "/images/uconn-logo.png",
+      "path": "/images/uconn-logo-transparent.png",
       "alt": "UConn Logo"
     }
   },
@@ -96,19 +96,9 @@
       "_commentProvider": "Choose the LLM provider here: anthropic | openai | openai-compatible",
       "_commentModel": "Set the model name for the selected provider. Example: claude-sonnet-4-20250514 or gpt-4.1-mini",
       "_commentBaseUrl": "Only needed for openai-compatible providers. Leave empty for Anthropic. For OpenAI, you can also leave it empty to use the default https://api.openai.com/v1",
-      "_exampleOpenAI": {
-        "provider": "openai",
-        "model": "gpt-4.1-mini",
-        "baseUrl": ""
-      },
-      "_exampleOpenAICompatible": {
-        "provider": "openai-compatible",
-        "model": "your-model-name",
-        "baseUrl": "http://localhost:11434/v1"
-      },
-      "enabled": false,
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-20250514",
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
       "baseUrl": ""
     }
   },
