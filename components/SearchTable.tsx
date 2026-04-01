@@ -10,7 +10,7 @@ import { PaginationSearch } from './PaginationSearch';
 import { SearchTableRow } from './SearchTableRow';
 
 export const SearchTable = () => {
-  const { result } = useSemanticSearchStore();
+  const { result, hasSearched } = useSemanticSearchStore();
   const { setTopBarCollapsedAuto } = useLayoutState();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -19,9 +19,14 @@ export const SearchTable = () => {
 
   const handleResultsScroll = useCallback(
     (event: React.UIEvent<HTMLDivElement>) => {
+      if (hasSearched) {
+        setTopBarCollapsedAuto(true);
+        return;
+      }
+
       setTopBarCollapsedAuto(event.currentTarget.scrollTop > 8);
     },
-    [setTopBarCollapsedAuto],
+    [hasSearched, setTopBarCollapsedAuto],
   );
 
   if (isMobile) {

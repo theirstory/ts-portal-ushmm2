@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useSemanticSearchStore } from '@/app/stores/useSemanticSearchStore';
@@ -33,10 +33,21 @@ export default function CollectionLayout() {
 
   const handleResultsScroll = useCallback(
     (event: React.UIEvent<HTMLDivElement>) => {
+      if (hasSearched) {
+        setTopBarCollapsedAuto(true);
+        return;
+      }
+
       setTopBarCollapsedAuto(event.currentTarget.scrollTop > 8);
     },
-    [setTopBarCollapsedAuto],
+    [hasSearched, setTopBarCollapsedAuto],
   );
+
+  useEffect(() => {
+    if (hasSearched) {
+      setTopBarCollapsedAuto(true);
+    }
+  }, [hasSearched, setTopBarCollapsedAuto]);
 
   return (
     <Box
