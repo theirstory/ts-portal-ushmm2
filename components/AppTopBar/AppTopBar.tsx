@@ -146,30 +146,6 @@ export const AppTopBar = () => {
                   </Tooltip>
                 )}
               </Box>
-              {!isStoryPage && (
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-                  <Tooltip title={isTopBarCollapsed ? 'Expand' : 'Collapse'}>
-                    <IconButton
-                      onClick={handleTopBarCollapseToggle}
-                      size="small"
-                      aria-label={isTopBarCollapsed ? 'Expand' : 'Collapse'}
-                      sx={{
-                        color: config.theme.colors.primary.contrastText,
-                        bgcolor: 'transparent',
-                        border: `1.5px solid ${config.theme.colors.primary.contrastText}`,
-                        width: 30,
-                        height: 30,
-                        '&:hover': {
-                          color: config.theme.colors.primary.main,
-                          borderColor: config.theme.colors.primary.main,
-                          bgcolor: 'action.hover',
-                        },
-                      }}>
-                      {isTopBarCollapsed ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
-                    </IconButton>
-                  </Tooltip>
-                </Box>
-              )}
               <Box
                 sx={{
                   display: { xs: 'none', md: 'flex' },
@@ -224,6 +200,30 @@ export const AppTopBar = () => {
                   TheirStory
                 </a>
               </Typography>
+              {!isFullScreenPage && (
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
+                  <Tooltip title={isTopBarCollapsed ? 'Expand' : 'Collapse'}>
+                    <IconButton
+                      onClick={handleTopBarCollapseToggle}
+                      size="small"
+                      aria-label={isTopBarCollapsed ? 'Expand' : 'Collapse'}
+                      sx={{
+                        color: config.theme.colors.primary.contrastText,
+                        bgcolor: 'transparent',
+                        border: `1.5px solid ${config.theme.colors.primary.contrastText}`,
+                        width: 30,
+                        height: 30,
+                        '&:hover': {
+                          color: config.theme.colors.primary.main,
+                          borderColor: config.theme.colors.primary.main,
+                          bgcolor: 'action.hover',
+                        },
+                      }}>
+                      {isTopBarCollapsed ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+                    </IconButton>
+                  </Tooltip>
+                </Box>
+              )}
             </Box>
           </Box>
           {!isTopBarCollapsed && (

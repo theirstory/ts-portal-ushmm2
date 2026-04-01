@@ -37,7 +37,12 @@ import { muxPlayerThemeProps } from '@/lib/theme/muxPlayerTheme';
 import { isChatEnabled } from '@/config/organizationConfig';
 import { getMuxPlaybackId } from '@/app/utils/converters';
 import { highlightSearchText } from '@/app/indexes/highlightSearch';
-import { ChatComposer, ChatMessagesThread, ChatStarterQuestions, getChatCopy } from '@/app/discover/Components/SharedChatUI';
+import {
+  ChatComposer,
+  ChatMessagesThread,
+  ChatStarterQuestions,
+  getChatCopy,
+} from '@/app/discover/Components/SharedChatUI';
 
 const DRAWER_WIDTH = 440;
 
@@ -350,7 +355,7 @@ export const FloatingChatDrawer = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <AutoAwesomeIcon sx={{ fontSize: 20 }} />
               <Typography variant="subtitle2" fontWeight={700}>
-                Ask AI
+                Discover - Ask AI
               </Typography>
               {isDesktop && (
                 <Typography variant="caption" sx={{ opacity: 0.7 }}>
@@ -432,9 +437,28 @@ export const FloatingChatDrawer = () => {
 
               {/* Citation details */}
               <Box sx={{ px: 2, py: 2, flex: 1 }}>
-                <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 0.5 }}>
-                  {activeCitation.interviewTitle}
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
+                  <Box
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      bgcolor: activeCitation.isChapterSynopsis ? colors.success.main : colors.primary.main,
+                      color: colors.primary.contrastText,
+                      fontWeight: 700,
+                      fontSize: '0.72rem',
+                      borderRadius: '4px',
+                      minWidth: 22,
+                      height: 22,
+                      px: 0.5,
+                      flexShrink: 0,
+                    }}>
+                    {activeCitation.index}
+                  </Box>
+                  <Typography variant="subtitle1" fontWeight={700}>
+                    {activeCitation.interviewTitle}
+                  </Typography>
+                </Box>
                 <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
                   {activeCitation.isChapterSynopsis ? 'Chapter Summary' : activeCitation.speaker}
                   {' · '}

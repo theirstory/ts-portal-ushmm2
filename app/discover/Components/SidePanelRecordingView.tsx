@@ -741,9 +741,12 @@ export const SidePanelRecordingView = () => {
           </Box>
 
           <Box>
-            <Typography variant="subtitle2" fontWeight={700}>
-              {activeCitation.interviewTitle}
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.25 }}>
+              <CitationBadge index={activeCitation.index} isChapter={Boolean(activeCitation.isChapterSynopsis)} />
+              <Typography variant="subtitle2" fontWeight={700}>
+                {activeCitation.interviewTitle}
+              </Typography>
+            </Box>
             <Typography variant="caption" color="text.secondary">
               {activeCitation.isChapterSynopsis ? (
                 <>
