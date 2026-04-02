@@ -81,8 +81,8 @@
     "carouselTopBar": {
       "intervalMs": 5000,
       "_comment": "Paths can be absolute (from /public) or full URLs. Leave images empty to use a solid backgroundColor.",
-      "backgroundColor": "#041c42",
-      "images": []
+      "backgroundColor": "",
+      "images": ["/images/carousel1.jpg", "/images/carousel2.jpg", "/images/carousel3.jpg"]
     },
     "portalHeaderOverlay": {
       "_comment": "Enable or disable overlay behind portal title/description.",
