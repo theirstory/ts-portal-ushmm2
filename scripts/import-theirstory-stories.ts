@@ -114,7 +114,7 @@ function buildOutputFileName(
   const storyTitle = typeof story?.title === 'string' ? story.title : storyId;
   const safeTitle = slugifyFilePart(storyTitle);
 
-  return `ts-portal-ishs-${safeTitle}-${publishFormat}.json`;
+  return `ts-portal-${safeTitle}-${publishFormat}.json`;
 }
 
 function printHelp(): void {

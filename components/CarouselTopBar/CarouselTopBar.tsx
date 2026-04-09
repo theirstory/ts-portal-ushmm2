@@ -43,7 +43,11 @@ export const CarouselTopBar = ({ children, isCollapsed }: { children: React.Reac
       height={isCollapsed ? collapsedHeight : expandedHeight}
       sx={{
         backgroundColor: backgroundColor || colors.common.black,
-        transition: `height 0.65s cubic-bezier(0.22, 1, 0.36, 1), padding 0.65s cubic-bezier(0.22, 1, 0.36, 1)`,
+        backgroundImage: carouselImages.length > 0 ? `url("${carouselImages[carouselIndex]}")` : 'none',
+        backgroundSize: '100%',
+        backgroundRepeat: 'no-repeat',
+        transition: `${isCollapsed ? 'background 0s linear,' : 'background 0.8s ease-in-out,'} height 0.65s cubic-bezier(0.22, 1, 0.36, 1), padding 0.65s cubic-bezier(0.22, 1, 0.36, 1)`,
+        backgroundPosition: '50% 20%',
         overflow: 'hidden',
         '&::after': {
           content: '""',
@@ -59,22 +63,6 @@ export const CarouselTopBar = ({ children, isCollapsed }: { children: React.Reac
           transition: 'height 0.65s cubic-bezier(0.22, 1, 0.36, 1)',
         },
       }}>
-      {carouselImages.length > 0 && (
-        <Box
-          component="img"
-          src={carouselImages[carouselIndex]}
-          alt=""
-          sx={{
-            position: 'absolute',
-            top: '-13%',
-            left: 0,
-            width: '100%',
-            height: 'auto',
-            transform: 'translateY(-50%)',
-            display: 'block',
-          }}
-        />
-      )}
       <Box
         height="100%"
         display="flex"
