@@ -55,7 +55,7 @@ cp nlp-processor/.env.example nlp-processor/.env
 docker compose --profile local up
 
 # 4. Open in browser
-open http://localhost:3000
+open http://localhost:3004
 ```
 
 **Important:** Edit `config.json` to customize your portal with organization name, branding colors, logos, and NER entity labels. See [CONFIGURATION.md](./CONFIGURATION.md) for all configuration options.
@@ -101,9 +101,9 @@ Default embedding model is `sentence-transformers/LaBSE`. NER uses `urchade/glin
 
 **Services:**
 
-- Frontend: `localhost:3000`
+- Frontend: `localhost:3004`
 - Weaviate: `localhost:8080`
-- NLP Processor: `localhost:7070`
+- NLP Processor: `localhost:7074`
 
 ## 📥 Import Interviews
 

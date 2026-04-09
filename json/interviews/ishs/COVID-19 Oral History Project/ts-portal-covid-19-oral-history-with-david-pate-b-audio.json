@@ -3583,18 +3583,11 @@
     ],
     "status": "completed",
     "storyId": "64cd4fb5173e0e4a4ab57c4a",
-    "updated_at": "2024-10-24T21:31:56.513Z",
-    "__v": 0
+    "updated_at": "2026-04-09T04:24:59.250Z",
+    "__v": 0,
+    "transcript": "We want to tie our hands behind our backs. I mean, I hope none of those ever come to fruition, but we cannot count on it. We have actually— I think a lot of us that are in this area and really studying a lot, think that we actually may be less prepared now for the next pandemic. I hope we learned the lessons. One thing that—and you are a historian— one thing I think you probably agree with is one thing that we know from studying history is we do not learn from history and we forget history really quickly. I think that is going to be our big threat to going forward. I think that Idaho did well, all considered, because our governor stayed the course and he did not go extreme either way. I think we did well because frankly, of the heroic people in public health and in our hospitals and clinics and the healthcare professionals, I cannot tell you how impressed I am. Those are things that I think saved us. It could have been way worse. Thank you. This brings me to my last question, which I ask in every interview, which is just, \"Was there anything that I should have asked you that I did not?\" I think the the only thing that I have spent some time thinking about I have not heard a lot is you know we mentioned it earlier that one of the things that was so unusual about this pandemic was the role of social media and so much spread of misinformation and disinformation. I think everybody has seen this in their own families. I have. I mean, here I was, relatively expert in this area and yet I would have a debate with one of my close family members, who as a rebuttal would send me a video of a well-known disinformation purveyor. And it is just [slams chair] you get to the point where you just throw up your hands. I think that the question is— we are not going to stop that— so how do we prepare for the future? Because there are people that just want to believe, tell me whatever the good thing is, and I just wanna believe that, even if it is wrong, just I am fine to be deluded. We do not need to worry about those people. What I worry about is the people who really are trying to make the right decision for them and for their families, but they are totally confused and they are worried about some of the stuff they are hearing. How do we help them? I— and I have talked to journalists because they deal with this information all the time and try to get ideas. I think we have got to do something in our educational system. We have to teach kids at an early age and even adults— there is a few times I have fallen for scams and so forth and my daughter will tell me you know what were you thinking we have to teach people more skills how do you identify authoritative information? How do you identify reliable information? How can you recognize something that probably is disinformation? And of course, this problem is only gonna get worse with the current discussions about AI and so on. It is going to get harder and harder. But I think we have to teach people how can you discern. You will not get it right all the time, but how can you help yourself to identify this probably is good information that I should consider, this is information I probably should not consider this. And there are some other countries who actually have legislated that for their educational programs and are incorporating it now. But we have got to teach our kids more about these things, how to be a little bit more discerning about the information they are receiving. If they choose to be deluded, they do, that is fine. But for people that want to make the best possible decision, how can you make sure you are getting that information? Thank you so much for all of your answers. I am going to go ahead and pause the recorder."
   },
   "story": {
-    "call_processing_status": "pending",
-    "call_processing_step": "idle",
-    "shared_page": "",
-    "transcoded": "",
-    "published": false,
-    "assetId": "",
-    "has_recording_tracks": false,
-    "meeting_ended_received": false,
     "_id": "64cd4fb5173e0e4a4ab57c4a",
     "wav_status": "completed",
     "twilio_composition_completed": false,
@@ -3671,17 +3664,359 @@
     ],
     "indexes": [
       {
-        "title": "OH 2791 Index",
-        "metadata": [],
-        "notes": [],
-        "_id": "671abcb8b3a6bcd0b66354d0",
-        "created_at": "2024-10-24T21:31:36.648Z",
-        "updated_at": "2024-10-24T21:31:56.231Z"
+        "created_at": "2026-04-09T04:29:30.145Z",
+        "updated_at": "2026-04-09T04:29:30.145Z",
+        "title": "AI Generated (2026-04-09 04:29:30)",
+        "metadata": [
+          {
+            "index": 0,
+            "timecode": "00:00:00",
+            "time": {
+              "start": 0,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 1,
+                "line": "# Reflections on Pandemic Preparedness",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 2,
+                "line": "> The discussion opens with reflections on how prepared society is for future pandemics. The speaker expresses concern that lessons from history are often not learned, potentially leaving us less prepared for the next pandemic. The role of local governance and the dedication of healthcare professionals are highlighted as factors that mitigated the impact of the recent pandemic in Idaho.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 3,
+                "line": "** pandemic preparedness, lessons from history, healthcare, Idaho, governance **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** pandemic preparedness, lessons from history, healthcare, Idaho, governance **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 4,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 5,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Reflections on Pandemic Preparedness",
+            "synopsis": "The discussion opens with reflections on how prepared society is for future pandemics. The speaker expresses concern that lessons from history are often not learned, potentially leaving us less prepared for the next pandemic. The role of local governance and the dedication of healthcare professionals are highlighted as factors that mitigated the impact of the recent pandemic in Idaho.",
+            "notes": "",
+            "keywords": "pandemic preparedness, lessons from history, healthcare, Idaho, governance"
+          },
+          {
+            "index": 6,
+            "timecode": "00:01:12",
+            "time": {
+              "start": 72,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 7,
+                "line": "# Impact of Social Media and Misinformation",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 8,
+                "line": "> The conversation shifts to the role of social media in spreading misinformation during the pandemic. The speaker shares personal anecdotes about family debates influenced by disinformation. Acknowledging the challenge of stopping misinformation, the focus turns to preparing for the future by emphasizing the need to educate people on how to identify reliable information.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 9,
+                "line": "** social media, misinformation, disinformation, family debates, reliable information **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** social media, misinformation, disinformation, family debates, reliable information **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 10,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 11,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Impact of Social Media and Misinformation",
+            "synopsis": "The conversation shifts to the role of social media in spreading misinformation during the pandemic. The speaker shares personal anecdotes about family debates influenced by disinformation. Acknowledging the challenge of stopping misinformation, the focus turns to preparing for the future by emphasizing the need to educate people on how to identify reliable information.",
+            "notes": "",
+            "keywords": "social media, misinformation, disinformation, family debates, reliable information"
+          },
+          {
+            "index": 12,
+            "timecode": "00:02:42",
+            "time": {
+              "start": 162,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 13,
+                "line": "# Education and Media Literacy",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 14,
+                "line": "> The speaker advocates for educational reforms to improve media literacy among both children and adults. By teaching people how to discern authoritative information from falsehoods, society can better prepare individuals to make informed decisions, especially in an era of AI-generated content. Other countries' legislative approaches to media literacy are mentioned as potential models.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 15,
+                "line": "** education, media literacy, discerning information, legislative approaches, AI **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** education, media literacy, discerning information, legislative approaches, AI **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 16,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 17,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 18,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Education and Media Literacy",
+            "synopsis": "The speaker advocates for educational reforms to improve media literacy among both children and adults. By teaching people how to discern authoritative information from falsehoods, society can better prepare individuals to make informed decisions, especially in an era of AI-generated content. Other countries' legislative approaches to media literacy are mentioned as potential models.",
+            "notes": "",
+            "keywords": "education, media literacy, discerning information, legislative approaches, AI"
+          }
+        ],
+        "notes": [
+          {
+            "children": [
+              {
+                "text": "[00:00:00]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Reflections on Pandemic Preparedness"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The discussion opens with reflections on how prepared society is for future pandemics. The speaker expresses concern that lessons from history are often not learned, potentially leaving us less prepared for the next pandemic. The role of local governance and the dedication of healthcare professionals are highlighted as factors that mitigated the impact of the recent pandemic in Idaho."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** pandemic preparedness, lessons from history, healthcare, Idaho, governance **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:01:12]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Impact of Social Media and Misinformation"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The conversation shifts to the role of social media in spreading misinformation during the pandemic. The speaker shares personal anecdotes about family debates influenced by disinformation. Acknowledging the challenge of stopping misinformation, the focus turns to preparing for the future by emphasizing the need to educate people on how to identify reliable information."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** social media, misinformation, disinformation, family debates, reliable information **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:02:42]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Education and Media Literacy"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The speaker advocates for educational reforms to improve media literacy among both children and adults. By teaching people how to discern authoritative information from falsehoods, society can better prepare individuals to make informed decisions, especially in an era of AI-generated content. Other countries' legislative approaches to media literacy are mentioned as potential models."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** education, media literacy, discerning information, legislative approaches, AI **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "_id": "69d72b2a3603a7742edbde06"
       }
     ],
     "created_at": "2023-08-04T19:21:26.000Z",
-    "updated_at": "2026-04-08T13:59:11.235Z",
-    "__v": 0,
+    "updated_at": "2026-04-09T04:29:30.145Z",
+    "__v": 1,
     "opentok_session_id": "1_MX40NTk3Njc0Mn4xMjcuMC4wLjF-MTY5MTE3Njg4NjEwMn4vZnJQelZxMDk2Ky90c1E2Q2VmUlRXVTl-fn4",
     "custom_archive_media_type": "audio/wav",
     "custom_archive_url": "uploads/bb8e4b2c-6ce2-41f5-9b79-4ae5af46aacd/archive.wav",
@@ -3693,13 +4028,32 @@
     "deepgramOp": "e0d263cc-11d5-4ce6-a7a3-01e5f20c61e5",
     "weaviate_operation": {
       "chunk_count": 2,
-      "content_version": 1,
+      "content_version": 2,
       "model_used": "text-embedding-3-small",
-      "status": "completed"
+      "status": "completed",
+      "created_at": "2026-04-08T14:01:05.178Z",
+      "updated_at": "2026-04-09T04:25:01.901Z"
     },
     "description": "The interview centers on pandemic preparedness, historical learning, and the challenges of misinformation in modern society. The speaker emphasizes that despite experiences from past pandemics, preparedness remains inadequate. They highlight the impact of misinformation, particularly propagated through social media, and its ability to cause confusion even among informed individuals. The conversation suggests incorporating media literacy and critical thinking skills into education systems to better equip people, especially the youth, to discern and evaluate information critically. The speaker expresses admiration for healthcare professionals and touches on regional pandemic responses, notably Idaho's moderate strategy.",
-    "muxAssets": [],
-    "chat": []
+    "assetId": "",
+    "call_processing_status": "pending",
+    "call_processing_step": "idle",
+    "chat": [],
+    "has_recording_tracks": false,
+    "meeting_ended_received": false,
+    "muxAssets": [
+      {
+        "type": "audio",
+        "status": "completed",
+        "url": "https://stream.mux.com/sdKDb537s02LEw017oSh00p01YpoRJDdQG5Ds02c41rNvK300/audio.m4a",
+        "playbackId": "sdKDb537s02LEw017oSh00p01YpoRJDdQG5Ds02c41rNvK300",
+        "assetId": "6wDCCoRXXEV4LRBCxcXWuXWUh02BYGAxS00fg9KXyN2WI",
+        "_id": "69d65fa15453592e2d4b3a61"
+      }
+    ],
+    "published": false,
+    "shared_page": "",
+    "transcoded": ""
   },
   "videoURL": "https://stream.mux.com/sdKDb537s02LEw017oSh00p01YpoRJDdQG5Ds02c41rNvK300/audio.m4a",
   "participants": [

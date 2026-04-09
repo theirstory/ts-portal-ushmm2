@@ -48487,14 +48487,6 @@
     "__v": 0
   },
   "story": {
-    "call_processing_status": "pending",
-    "call_processing_step": "idle",
-    "shared_page": "",
-    "transcoded": "",
-    "published": false,
-    "assetId": "",
-    "has_recording_tracks": false,
-    "meeting_ended_received": false,
     "_id": "6495fe7304ea3fe36ac4f05e",
     "wav_status": "completed",
     "twilio_composition_completed": false,
@@ -48571,17 +48563,1331 @@
     ],
     "indexes": [
       {
-        "title": "OH2795 Adams Index",
-        "metadata": [],
-        "notes": [],
-        "_id": "671ac0d7b3a6bcd0b66394cd",
-        "created_at": "2024-10-24T21:49:11.969Z",
-        "updated_at": "2024-10-24T21:49:39.123Z"
+        "created_at": "2026-04-09T04:29:17.944Z",
+        "updated_at": "2026-04-09T04:29:17.944Z",
+        "title": "AI Generated (2026-04-09 04:29:17)",
+        "metadata": [
+          {
+            "index": 0,
+            "timecode": "00:00:03",
+            "time": {
+              "start": 3,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 1,
+                "line": "# Introduction and Purpose of Interview",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 2,
+                "line": "> The interview begins with the introduction of HannaLore Hein and Alex Adams, setting the stage for a discussion on Alex's role during COVID-19. It outlines the aim to capture experiences related to the pandemic and Idaho's historical record.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 3,
+                "line": "** introduction, COVID-19, oral history, Idaho, Alex Adams, HannaLore Hein **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** introduction, COVID-19, oral history, Idaho, Alex Adams, HannaLore Hein **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 4,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 5,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Introduction and Purpose of Interview",
+            "synopsis": "The interview begins with the introduction of HannaLore Hein and Alex Adams, setting the stage for a discussion on Alex's role during COVID-19. It outlines the aim to capture experiences related to the pandemic and Idaho's historical record.",
+            "notes": "",
+            "keywords": "introduction, COVID-19, oral history, Idaho, Alex Adams, HannaLore Hein"
+          },
+          {
+            "index": 6,
+            "timecode": "00:00:13",
+            "time": {
+              "start": 13,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 7,
+                "line": "# Alex Adams' Background and Career Path",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 8,
+                "line": "> Alex Adams discusses his background as a pharmacist and the career shift from pharmacy to budgeting and regulation. Influenced by his family background in pharmacy, he ended up in an unexpected administrative path.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 9,
+                "line": "** Alex Adams, pharmacist, career path, family background, pharmacy, budgeting **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** Alex Adams, pharmacist, career path, family background, pharmacy, budgeting **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 10,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 11,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Alex Adams' Background and Career Path",
+            "synopsis": "Alex Adams discusses his background as a pharmacist and the career shift from pharmacy to budgeting and regulation. Influenced by his family background in pharmacy, he ended up in an unexpected administrative path.",
+            "notes": "",
+            "keywords": "Alex Adams, pharmacist, career path, family background, pharmacy, budgeting"
+          },
+          {
+            "index": 12,
+            "timecode": "00:01:56",
+            "time": {
+              "start": 116,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 13,
+                "line": "# Transition to Idaho and Professional Goals",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 14,
+                "line": "> Adams details his move from Washington, D.C., to Idaho, aligning his career with family priorities. He shares aspirations to make Idaho a leading state in pharmacy practice.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 15,
+                "line": "** Idaho, family, professional goals, pharmacy practice, career move **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** Idaho, family, professional goals, pharmacy practice, career move **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 16,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 17,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Transition to Idaho and Professional Goals",
+            "synopsis": "Adams details his move from Washington, D.C., to Idaho, aligning his career with family priorities. He shares aspirations to make Idaho a leading state in pharmacy practice.",
+            "notes": "",
+            "keywords": "Idaho, family, professional goals, pharmacy practice, career move"
+          },
+          {
+            "index": 18,
+            "timecode": "00:03:56",
+            "time": {
+              "start": 236,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 19,
+                "line": "# Regulatory Achievements and COVID-19 Preparation",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 20,
+                "line": "> Alex reflects on achievements at the Idaho Board of Pharmacy, including making Idaho a leader in pharmacy regulations, which indirectly prepared the state for COVID-19 challenges.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 21,
+                "line": "** regulatory achievements, Idaho Board of Pharmacy, pharmacy regulations, COVID-19 preparation **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** regulatory achievements, Idaho Board of Pharmacy, pharmacy regulations, COVID-19 preparation **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 22,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 23,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Regulatory Achievements and COVID-19 Preparation",
+            "synopsis": "Alex reflects on achievements at the Idaho Board of Pharmacy, including making Idaho a leader in pharmacy regulations, which indirectly prepared the state for COVID-19 challenges.",
+            "notes": "",
+            "keywords": "regulatory achievements, Idaho Board of Pharmacy, pharmacy regulations, COVID-19 preparation"
+          },
+          {
+            "index": 24,
+            "timecode": "00:06:26",
+            "time": {
+              "start": 386,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 25,
+                "line": "# Transition to Division of Financial Management",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 26,
+                "line": "> Alex Adams describes his leap of faith transitioning from pharmacy to the Division of Financial Management, highlighting the challenges and responsibilities of overseeing state budgets during unprecedented times.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 27,
+                "line": "** Division of Financial Management, transition, state budget, challenges, responsibilities **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** Division of Financial Management, transition, state budget, challenges, responsibilities **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 28,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 29,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Transition to Division of Financial Management",
+            "synopsis": "Alex Adams describes his leap of faith transitioning from pharmacy to the Division of Financial Management, highlighting the challenges and responsibilities of overseeing state budgets during unprecedented times.",
+            "notes": "",
+            "keywords": "Division of Financial Management, transition, state budget, challenges, responsibilities"
+          },
+          {
+            "index": 30,
+            "timecode": "00:11:09",
+            "time": {
+              "start": 669,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 31,
+                "line": "# COVID-19 and Initial Reactions",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 32,
+                "line": "> The interview discusses initial reactions to COVID-19, including economic uncertainties, unemployment spikes, and anticipations of budget challenges in Idaho.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 33,
+                "line": "** COVID-19, initial reactions, economic impact, unemployment, budget challenges **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** COVID-19, initial reactions, economic impact, unemployment, budget challenges **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 34,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 35,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "COVID-19 and Initial Reactions",
+            "synopsis": "The interview discusses initial reactions to COVID-19, including economic uncertainties, unemployment spikes, and anticipations of budget challenges in Idaho.",
+            "notes": "",
+            "keywords": "COVID-19, initial reactions, economic impact, unemployment, budget challenges"
+          },
+          {
+            "index": 36,
+            "timecode": "00:23:05",
+            "time": {
+              "start": 1385,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 37,
+                "line": "# Federal CARES Act Response and Budget Strategy",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 38,
+                "line": "> The discussion centers on Idaho's strategic response to the CARES Act funds, including challenges of balancing the state budget without directly using federal funds for lost revenue.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 39,
+                "line": "** CARES Act, federal funds, budget strategy, Idaho, challenges **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** CARES Act, federal funds, budget strategy, Idaho, challenges **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 40,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 41,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Federal CARES Act Response and Budget Strategy",
+            "synopsis": "The discussion centers on Idaho's strategic response to the CARES Act funds, including challenges of balancing the state budget without directly using federal funds for lost revenue.",
+            "notes": "",
+            "keywords": "CARES Act, federal funds, budget strategy, Idaho, challenges"
+          },
+          {
+            "index": 42,
+            "timecode": "00:26:32",
+            "time": {
+              "start": 1592,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 43,
+                "line": "# Coronavirus Financial Advisory Committee (CFAC)",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 44,
+                "line": "> Alex Adams explains the establishment of CFAC to manage COVID-19 relief funds, ensuring the effective distribution and accountability of federal funds within Idaho.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 45,
+                "line": "** CFAC, COVID-19 relief, federal funds, Idaho, accountability **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** CFAC, COVID-19 relief, federal funds, Idaho, accountability **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 46,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 47,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Coronavirus Financial Advisory Committee (CFAC)",
+            "synopsis": "Alex Adams explains the establishment of CFAC to manage COVID-19 relief funds, ensuring the effective distribution and accountability of federal funds within Idaho.",
+            "notes": "",
+            "keywords": "CFAC, COVID-19 relief, federal funds, Idaho, accountability"
+          },
+          {
+            "index": 48,
+            "timecode": "00:32:13",
+            "time": {
+              "start": 1933,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 49,
+                "line": "# Allocation of Federal Funds to Local Governments",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 50,
+                "line": "> The process behind allocating federal funds to local governments and tribes in Idaho is detailed, including critical discussion on maintaining accountability and managing expectations.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 51,
+                "line": "** federal funds, local governments, tribes, allocation, accountability **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** federal funds, local governments, tribes, allocation, accountability **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 52,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 53,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Allocation of Federal Funds to Local Governments",
+            "synopsis": "The process behind allocating federal funds to local governments and tribes in Idaho is detailed, including critical discussion on maintaining accountability and managing expectations.",
+            "notes": "",
+            "keywords": "federal funds, local governments, tribes, allocation, accountability"
+          },
+          {
+            "index": 54,
+            "timecode": "00:41:18",
+            "time": {
+              "start": 2478,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 55,
+                "line": "# Public Sentiment and Misinformation Challenges",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 56,
+                "line": "> Adams discusses dealing with public sentiment and misinformation, especially surrounding controversial drugs like hydroxychloroquine during the pandemic.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 57,
+                "line": "** public sentiment, misinformation, hydroxychloroquine, COVID-19, challenges **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** public sentiment, misinformation, hydroxychloroquine, COVID-19, challenges **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 58,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 59,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Public Sentiment and Misinformation Challenges",
+            "synopsis": "Adams discusses dealing with public sentiment and misinformation, especially surrounding controversial drugs like hydroxychloroquine during the pandemic.",
+            "notes": "",
+            "keywords": "public sentiment, misinformation, hydroxychloroquine, COVID-19, challenges"
+          },
+          {
+            "index": 60,
+            "timecode": "00:53:24",
+            "time": {
+              "start": 3204,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 61,
+                "line": "# Impact and Lessons from COVID-19 on Family and Governance",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 62,
+                "line": "> Alex reflects on the personal and professional impacts of COVID-19, emphasizing lessons learned and the importance of strategic foresight in governance.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 63,
+                "line": "** impact, family, governance, COVID-19, lessons learned **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** impact, family, governance, COVID-19, lessons learned **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 64,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 65,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Impact and Lessons from COVID-19 on Family and Governance",
+            "synopsis": "Alex reflects on the personal and professional impacts of COVID-19, emphasizing lessons learned and the importance of strategic foresight in governance.",
+            "notes": "",
+            "keywords": "impact, family, governance, COVID-19, lessons learned"
+          },
+          {
+            "index": 66,
+            "timecode": "01:00:03",
+            "time": {
+              "start": 3603,
+              "end": null
+            },
+            "lines": [
+              {
+                "index": 67,
+                "line": "# Idaho's Pandemic Response and Broader Implications",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 68,
+                "line": "> The interview concludes with a discussion on Idaho's overall response to the pandemic, highlighting economic resilience, public approval of leadership, and future implications.",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 69,
+                "line": "** Idaho, pandemic response, economic resilience, leadership, future implications **",
+                "empty": false,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": [
+                  [
+                    "** Idaho, pandemic response, economic resilience, leadership, future implications **",
+                    "",
+                    "**"
+                  ]
+                ]
+              },
+              {
+                "index": 70,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 71,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              },
+              {
+                "index": 72,
+                "line": "",
+                "empty": true,
+                "timecodes": [],
+                "times": [],
+                "matches": [],
+                "keywords": []
+              }
+            ],
+            "timecodes": [],
+            "title": "Idaho's Pandemic Response and Broader Implications",
+            "synopsis": "The interview concludes with a discussion on Idaho's overall response to the pandemic, highlighting economic resilience, public approval of leadership, and future implications.",
+            "notes": "",
+            "keywords": "Idaho, pandemic response, economic resilience, leadership, future implications"
+          }
+        ],
+        "notes": [
+          {
+            "children": [
+              {
+                "text": "[00:00:03]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Introduction and Purpose of Interview"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The interview begins with the introduction of HannaLore Hein and Alex Adams, setting the stage for a discussion on Alex's role during COVID-19. It outlines the aim to capture experiences related to the pandemic and Idaho's historical record."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** introduction, COVID-19, oral history, Idaho, Alex Adams, HannaLore Hein **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:00:13]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Alex Adams' Background and Career Path"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Alex Adams discusses his background as a pharmacist and the career shift from pharmacy to budgeting and regulation. Influenced by his family background in pharmacy, he ended up in an unexpected administrative path."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** Alex Adams, pharmacist, career path, family background, pharmacy, budgeting **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:01:56]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Transition to Idaho and Professional Goals"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Adams details his move from Washington, D.C., to Idaho, aligning his career with family priorities. He shares aspirations to make Idaho a leading state in pharmacy practice."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** Idaho, family, professional goals, pharmacy practice, career move **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:03:56]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Regulatory Achievements and COVID-19 Preparation"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Alex reflects on achievements at the Idaho Board of Pharmacy, including making Idaho a leader in pharmacy regulations, which indirectly prepared the state for COVID-19 challenges."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** regulatory achievements, Idaho Board of Pharmacy, pharmacy regulations, COVID-19 preparation **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:06:26]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Transition to Division of Financial Management"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Alex Adams describes his leap of faith transitioning from pharmacy to the Division of Financial Management, highlighting the challenges and responsibilities of overseeing state budgets during unprecedented times."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** Division of Financial Management, transition, state budget, challenges, responsibilities **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:11:09]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# COVID-19 and Initial Reactions"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The interview discusses initial reactions to COVID-19, including economic uncertainties, unemployment spikes, and anticipations of budget challenges in Idaho."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** COVID-19, initial reactions, economic impact, unemployment, budget challenges **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:23:05]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Federal CARES Act Response and Budget Strategy"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The discussion centers on Idaho's strategic response to the CARES Act funds, including challenges of balancing the state budget without directly using federal funds for lost revenue."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** CARES Act, federal funds, budget strategy, Idaho, challenges **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:26:32]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Coronavirus Financial Advisory Committee (CFAC)"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Alex Adams explains the establishment of CFAC to manage COVID-19 relief funds, ensuring the effective distribution and accountability of federal funds within Idaho."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** CFAC, COVID-19 relief, federal funds, Idaho, accountability **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:32:13]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Allocation of Federal Funds to Local Governments"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The process behind allocating federal funds to local governments and tribes in Idaho is detailed, including critical discussion on maintaining accountability and managing expectations."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** federal funds, local governments, tribes, allocation, accountability **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:41:18]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Public Sentiment and Misinformation Challenges"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Adams discusses dealing with public sentiment and misinformation, especially surrounding controversial drugs like hydroxychloroquine during the pandemic."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** public sentiment, misinformation, hydroxychloroquine, COVID-19, challenges **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[00:53:24]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Impact and Lessons from COVID-19 on Family and Governance"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> Alex reflects on the personal and professional impacts of COVID-19, emphasizing lessons learned and the importance of strategic foresight in governance."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** impact, family, governance, COVID-19, lessons learned **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "[01:00:03]"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "# Idaho's Pandemic Response and Broader Implications"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "> The interview concludes with a discussion on Idaho's overall response to the pandemic, highlighting economic resilience, public approval of leadership, and future implications."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": "** Idaho, pandemic response, economic resilience, leadership, future implications **"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "_id": "69d72b1d3603a7742edbddd6"
       }
     ],
     "created_at": "2023-06-23T20:20:03.641Z",
-    "updated_at": "2026-04-08T13:59:54.913Z",
-    "__v": 0,
+    "updated_at": "2026-04-09T04:29:17.944Z",
+    "__v": 1,
     "opentok_session_id": "1_MX40NTk3Njc0Mn4xMjcuMC4wLjF-MTY4NzU1MTYwMzg4Nn5laGhZV2d5SDZZMGlNellvWXRQR0VJRER-fn4",
     "custom_archive_media_type": "audio/wav",
     "custom_archive_url": "uploads/ee5763f7-1cd2-42ec-aace-fdf541373535/archive.wav",
@@ -48595,11 +49901,30 @@
       "chunk_count": 29,
       "content_version": 1,
       "model_used": "text-embedding-3-small",
-      "status": "completed"
+      "status": "completed",
+      "created_at": "2026-04-08T14:01:11.165Z",
+      "updated_at": "2026-04-08T14:01:11.165Z"
     },
     "description": "The transcript features an interview with Alex Adams, the Administrator of the Idaho Division of Financial Management, conducted by HannaLore Hein, state historian for the Idaho State Historical Society. The discussion focuses on Adams' role and experiences during the COVID-19 pandemic, including his oversight of federal relief funds and the Coronavirus Financial Advisory Committee (CFAC). Topics include Idaho's swift adaptation to COVID-19 regulations, economic strategies to manage the crisis, the allocation of federal funds, and personal reflections on the pandemic's impact on Adams' life and career. The conversation highlights Idaho's fiscal policies and economic resilience during the pandemic.",
-    "muxAssets": [],
-    "chat": []
+    "assetId": "",
+    "call_processing_status": "pending",
+    "call_processing_step": "idle",
+    "chat": [],
+    "has_recording_tracks": false,
+    "meeting_ended_received": false,
+    "muxAssets": [
+      {
+        "type": "audio",
+        "status": "completed",
+        "url": "https://stream.mux.com/SigTIFDk01fLXpR3oW1xKAeFzM6s2yz01ucIv3i102Aa018/audio.m4a",
+        "playbackId": "SigTIFDk01fLXpR3oW1xKAeFzM6s2yz01ucIv3i102Aa018",
+        "assetId": "Za40001cUxUF9ECKayClEHuPfZdLDrJWGU3WsoQCvUGbE",
+        "_id": "69d65fa736c7802b31d55a57"
+      }
+    ],
+    "published": false,
+    "shared_page": "",
+    "transcoded": ""
   },
   "videoURL": "https://stream.mux.com/SigTIFDk01fLXpR3oW1xKAeFzM6s2yz01ucIv3i102Aa018/audio.m4a",
   "participants": [
